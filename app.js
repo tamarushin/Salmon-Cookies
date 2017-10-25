@@ -1,88 +1,54 @@
-var princess = {
-  name: 'Tama',
-  Born: 'Boulder',
-  brotherskids: ['Emily', 'Annabelle','Ronnie', 'Lydia'],
-  brotherskidsages: [
-    {
-      Emily: 18
-    },{
-      Annabelle: 6
-    },{
-      Ronnie: 3
-    },{
-      Lydia: 3
-    },
-  ]
+'use strict';
+
+//create a var for the first store which is the object and list the properties
+var pikestore = {
+  storeName: '1st and Pike',
+  minCust: 23,
+  maxCust: 65,
+  avgPerCust: 6.3,
 }
-
-console.log(princess)
-
-var getBorn = function() {
-  return 'this princess was born in ' + this.born + ' Colorado';
+var seatacstore = {
+  storeName: 'SeaTac Airport',
+  minCust: 3,
+  maxCust: 24,
+  avgPerCust: 1.2,
 }
-
-
-var EpicFailVideo = function(epicRating, hasAnimals) {
-  this.epicRating = epicRating;
-  this.hasAnimals = hasAnimals;
+var seattlecenter = {
+  storeName: 'Seattle Center',
+  minCust: 11,
+  maxCust: 38,
+  avgPerCust: 3.7,
 }
-
-var parkourFail = new EpicFailVideo(7, false);
-var CorgiFail = new EpicFailVideo(4, true);
-
-console.log('parkour', parkourFail);
-console.log('corgi', corgiFail);
-
-var EpicFailVideo = function(epicRating, hasAnimals) {
-  this.epicRating = epicRating;
-  this.hasAnimals = hasAnimals;
+var capitolhill = {
+  storeName: 'Capitol Hill',
+  minCust: 20,
+  maxCust: 38,
+  avgPerCust: 2.3,
 }
-
-EpicFailVideo.prototype.generateRandom = function(min, max) {
-  return Math.floor(Math.random() * (max - min + 1)) + min;
+var alki = {
+  storeName: 'Alki',
+  minCust: 2,
+  maxCust: 16,
+  avgPerCust: 4.6,
 }
+var storeHours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm'];
 
-var parkourFail = new EpicFailVideo(7, false);
-var corgiFail = new EpicFailVideo(4, true);
-
-console.log(parkourFail.generateRandom(1, 5));
-console.log(corgiFail.generateRandom(1, 5));
-var EpicFailVideo = function(epicRating, hasAnimals) {
-  this.epicRating = epicRating;
-  this.hasAnimals = hasAnimals;
-}
-
- EpicFailVideo.prototype.generateRandom = function(min, max) {
-   return Math.floor(Math.random() * (max - min + 1)) + min;
+  var HourlyCustomers = function(storeName, minCust, maxCust, avgPerCust){
+     this.name = storeName;
+     this.minCust = minCust;
+     this.maxCust = maxCust
+     this.avgPerCust = avgPerCust
  }
 
- EpicFailVideo.prototype.dailyLikes = function() {
-   var viewers, percentage;
-
-   viewers = this.generateRandom(10, 30) * this.epicRating;
-
-   if (this.hasAnimals) {
-     percentage = 0.75;
-   } else {
-     percentage = 0.40;
-   }
-
-   return Math.round(viewers * percentage);
- }
-
- var parkourFail = new EpicFailVideo(7, false);
- var corgiFail = new EpicFailVideo(4, true);
-
- console.log(parkourFail.dailyLikes());
- console.log(corgiFail.dailyLikes());
+ var alki = new HourlyCustomers('Alki Store', 2, 16, 4.6);
 
 
-  function SalmonCookieStore(storeLocation, hoursOpen, min, max, avg,) {
-    this.name = storeLocation;
-    this.minCustomer = min;
-    this.maxCustomer = max;
-    this.avgCookie = avg;
 
-    this.hourlySales = [];
-    this.totalSales = 0;
-  };
+    var totalHourlySales = 0
+    var projectedHourlySales = []
+
+for  (var i = 0; i < storeHours.length; i++){
+
+}
+
+var storeHours = []
