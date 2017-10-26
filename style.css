@@ -1,0 +1,15 @@
+body {
+  font-family: fantasy;
+}
+fieldset {
+    padding-left: 20px;
+}
+input [type = "text"]{
+  padding: 7px;
+  border: solid 5px #000;
+  border-radius: 3px;
+}
+table {
+  margin: auto;
+  
+}
