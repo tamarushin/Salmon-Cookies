@@ -9,12 +9,12 @@ function Store(storeName, minCust, maxCust, avgPerCust){
    this.avgPerCust = avgPerCust
    this.totalHourlySales = 0
    this.projectedHourlySales = []
-}
+  }
 
-for  (var i = 0; i < storeHours.length; i++){
-   this.totalDailySales = 0
-   this.projectedHourlySales = []
-}
+// for  (var i = 0; i < storeHours.length; i++){
+//    this.totalDailySales = 0
+//    this.projectedHourlySales = []
+// }
 
  Store.prototype.randomCustGenerator = function(){
    var random =  Math.round(Math.random() * (this.maxCust - this.minCust));
@@ -26,10 +26,10 @@ for  (var i = 0; i < storeHours.length; i++){
    for(var i = 0; i < storeHours.length; i++){
      random = this.randomCustGenerator();
      this.projectedHourlySales.push(Math.round(random * this.avgPerCust));
-   }
+     }
  console.log(this)
  }
-
+//created a store prototype function to calculate total sales perday. created a loop to loop through hours array and calculate total sales per day.
  Store.prototype.totalSalesPerDay = function(){
    var total = 0;
    for(var j = 0; j < this.projectedHourlySales.length; j++){
@@ -39,9 +39,7 @@ for  (var i = 0; i < storeHours.length; i++){
    this.totalDailySales = total;
    return total;
  }
-
-
-   var allStores = [];
+var allStores = [];
 
  //object constructors
 var alkiStore = new Store('Alki Store', 2, 16, 4.6);
@@ -62,7 +60,6 @@ for(var j = 0; j < allStores.length; j++){
    allStores[j].hourlySales();
    allStores[j].totalSalesPerDay();
 }
- // var storeHours = []
 
   console.log(allStores)
 var tData = '<td></td>';
@@ -77,6 +74,7 @@ for(var k = 0; k < storeHours.length; k++){
   tData = tData + '<td>' + storeHours[k] + '</td>';
   console.log(tData);
   }
+  tData = tData + '<td>' + 'total' + '</td>'
  return tData;
 }
 
@@ -86,17 +84,34 @@ tData = methodId();
   myRow.innerHTML = tData;
   el.appendChild(myRow);
 
-for(var j = 0; j < allStores.length; j++){
+for(var row = 0; row < allStores.length; row++){
 
-  hours = allStores[j].projectedHourlySales
+  hours = allStores[row].projectedHourlySales
   console.log(hours);
-  total = allStores[j].totalDailySales
+  total = allStores[row].totalDailySales
   console.log(total);
-  name = allStores[j].name
-  console.log (name)
+  name = allStores[row].name
+  console.log (name);
   el = document.getElementById('allStores');
-  tdData2 = '<td>' + name + '</td>'
-  myRow2 = document.createElement('tr')
-  myRow2.innerHTML = tdData2
-  el.appendChild(myRow2)
+  tdData2 = '<td>' + name + '</td>';
+  for(var col = 0; col < storeHours.length; col++){
+    tdData2 = tdData2 + '<td>' + hours[col] + '</td>';
+  }
+  tdData2 = tdData2 + '<td>' + total + '</td>';
+  myRow2 = document.createElement('tr');
+  myRow2.innerHTML = tdData2;
+  el.appendChild(myRow2);
 }
+
+tdData2 = '<td> TOTAL</td>' ;
+for(var col = 0; col < storeHours.length; col++){
+  total = 0;
+  for(var row = 0; row < allStores.length; row++){
+  total = total + allStores[row].projectedHourlySales[col];
+  }
+  tdData2 = tdData2 + '<td>' + total + '</td>';
+}
+tdData2 = tdData2 + '<td>' + ':)' + '</td>';
+myRow2 = document.createElement('tr');
+myRow2.innerHTML = tdData2;
+el.appendChild(myRow2);
