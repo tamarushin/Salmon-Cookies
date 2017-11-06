@@ -115,3 +115,23 @@ tdData2 = tdData2 + '<td>' + ':)' + '</td>';
 myRow2 = document.createElement('tr');
 myRow2.innerHTML = tdData2;
 el.appendChild(myRow2);
+
+function generateStoreData(event){
+  event.preventDefault();
+  var theFormItself = event.target;
+  var storeNameInput = theFormItself.elements['store-name-input'].value;
+  var minCustomerInput = theFormItself.elements['min-cust-input'].value;
+  var maxCustomerInput = theFormItself.elements['max-cust-input'].value;
+  var avgCookiesInput = theFormItself.elements['avgCookies-input'].value;
+
+  var formStore = new Store(storeNameInput, minCustomerInput, maxCustomerInput, avgCookiesInput);
+
+  var footerTds = document.getElementById('footerElement').childNodes;
+  for (var i = 1; i < footerTds.length - 1; i++) {
+    footerTds[i].textContent = cookieHourTotals[i - 1];
+  }
+  footerTds[footerTds.length - 1].textContent = totalSum(cookieHourTotals);
+  form.reset();
+};
+var form = document.getElementById('theForm');
+form.addEventListener('submit', generateStoreData);

@@ -8,22 +8,49 @@
     <link href='https://fonts.googleapis.com/css?family=Inconsolata'>
   </head>
   <body>
+    <header>
+      <h1>Pats Salmon Cookie Store</h1>
+    </header id='header'>
+
+    <div>
+      <img src="./images/salmon.png"/>
+    </div id='logo'>
+
+    <h2><i>Open up your own Franchise!</i></h2>
+    <h3>See Projected Sales Below</h3>
     <table>
       <thead id='storeHours'></thead>
       <tbody id='allStores'></tbody>
     </table>
+    <div>
+      <h2>Merchandise!</h2>
+      <img src="./images/cutter.jpeg"/>
+      <p>Buy this great cookie cutter to make your own Salmon Cookies! <i>Only</i>    $7.98</p>
 
-    <form action="/my-handling-form-page" method="post">
+      <img src="./images/frosted-cookie.jpg"/>
+      <p>Buy this wonderful Salmon-shaped Cookie!</p>
 
-    </form>
-    <header>
-      <h1>Pats Salmon Cookie Store</h1>
+      <img src="./images/shirt.jpg"/>
+      <p>Look classy in our scratch-n-sniff t-shirt! <i>Only</i>  $19.95 Buy for everyone on your Christmas lists</p>
 
-    </header id='header'>
+    </div>
 
-    <h2>Yummy Treats for the Eats</h2>
-    <script src="constructorFunctionsApp.js"></script>
-  </body>
-
-</html>
 <html>
+  <body>
+    <form action="/my-handling-form-page" method="post">
+      <fieldset>
+          <legend>Please enter your store information:</legend>
+          <label>Store Name:</label>
+          <input type="text" name="store-name-input" required /> <br />
+          <label>Minimum Customer:</label>
+          <input type="text" name="min-cust-input" min="1" required /> <br />
+          <label>Maximum Customer:</label>
+          <input type="text" name="max-cust-input" required /> <br />
+          <label>Average Cookies per Customer:</label>
+          <input type="text" name="avgCookies-input" min="1" required /> <br />
+          <input type="submit" name="newStoreData" value="Submit">
+      </fieldset>
+    </form>
+  </body>
+  <script src="constructorFunctionsApp.js"></script>
+</html>

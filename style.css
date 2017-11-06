@@ -1,10 +1,24 @@
 body {
   font-family: fantasy;
+    color: black;
+    background-color: #84310b;
+  }
+header {
+  text-align: center;
+  font-family: fantasy;
+  color: black;
+}
+div {
+  text-align: center;
 }
 h1 {
   text-align: center;
+  color: #e91339;
 }
 h2 {
+  text-align: center;
+}
+h3 {
   text-align: center;
 }
 fieldset {
@@ -25,4 +39,15 @@ table {
 }
 td {
   border: solid 1px black;
+}
+
+form {
+  margin: auto;
+  border-top-style: double;
+  border-left-style: double;
+  border-right-style: double;
+  border-bottom-style: double;
+}
+footer {
+  text-align: center;
 }
